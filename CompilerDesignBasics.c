@@ -7,7 +7,7 @@
 
 char keyword [][10] = {"int","float","if","else","char"};
 
-//function to check : if word is a keyword
+//function to check if word is a keyword
 
 int isKeyword(char word[]){
     for(int i=0;i<5;i++)
@@ -54,20 +54,8 @@ int main(){
         else{
             word[i] = '\0';
             i = 0;
-
-            //
-
+            // chech the word and print
             if(strlen(word)>0){
-                // int isKey = 0;
-                
-                // for(int j=0;j<5;j++)
-                // {
-                //     if(strcmp(word,keyword[j]) == 0)
-                //     {
-                //         isKey = 1;
-                //         break;
-                //     }
-                // }
             
              if (isKeyword(word))
              {
@@ -77,12 +65,13 @@ int main(){
                 printf("Identifier: %s\n", word);
              }
         }
+            // check if current character is an operator
          if (ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '=' || ch == '>') 
         {
             printf("Operator: %c\n", ch);
         }
-        }
-    }
+      }
+  }
     fclose(ptr);
     return 0;
 }
