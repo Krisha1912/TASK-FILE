@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<ctype.h>
-
+// function to compress a file
 void compressfile(){
     FILE *in = fopen("input.txt","r");  //open original file
     FILE *out = fopen("compressed.txt","w");  // create compressed file
@@ -24,17 +24,19 @@ void compressfile(){
             count ++;
         }
         else{
+            // write character and count
             fprintf(out,"%c%d",str,count);
             str = ch;
             count = 1;
         }
     }
+    
     fprintf(out,"%c%d",str,count);
     fclose(in);
     fclose(out);
     printf("file compressed to compressed.txt\n");
 }
-
+// function to decompress a file
 void decompressfile(){
     FILE * in = fopen("compressed.txt","r");
     FILE* out = fopen("decompressed.txt","w");
